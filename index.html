@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Unfollow Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Instagram Unfollow Checker</h1>
+        <p class="subtitle">อัปโหลดไฟล์ JSON จาก Instagram เพื่อตรวจสอบผู้ที่ไม่ฟอลโลว์คุณกลับ</p>
+
+        <!-- ส่วนอัปโหลดไฟล์ -->
+        <div class="upload-section">
+            <div class="file-box">
+                <label for="followersFile">📁 เลือกไฟล์ Followers (เช่น followers_1.json):</label>
+                <input type="file" id="followersFile" accept=".json">
+            </div>
+            <div class="file-box">
+                <label for="followingFile">📁 เลือกไฟล์ Following (เช่น following.json):</label>
+                <input type="file" id="followingFile" accept=".json">
+            </div>
+            <button id="checkBtn" class="btn primary-btn">🔍 ตรวจสอบรายชื่อ</button>
+        </div>
+
+        <!-- ส่วนแสดงผลลัพธ์ -->
+        <div id="resultSection" class="result-section hidden">
+            <div class="stats">
+                <p>👥 ติดตามทั้งหมด: <span id="followingCount">0</span> บัญชี</p>
+                <p>👤 ผู้ติดตาม: <span id="followersCount">0</span> บัญชี</p>
+                <p>🔍 ไม่ฟอลกลับ: <span id="notBackCount">0</span> บัญชี</p>
+            </div>
+
+            <div class="list-container">
+                <h3>รายชื่อคนที่ไม่ฟอลโลว์คุณกลับ:</h3>
+                <ul id="userList"></ul>
+            </div>
+
+            <div class="action-section">
+                <button id="downloadTxtBtn" class="btn secondary-btn">📥 ดาวน์โหลด target_users.txt</button>
+                <button id="startUnfollowBtn" class="btn danger-btn">🚀 เริ่มจำลองการอันฟอล (Unfollow)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
